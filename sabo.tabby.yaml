@@ -1,0 +1,72 @@
+# Basic
+# Host to bind
+host: 0.0.0.0
+# Port to listen for connections
+port: 1312
+# Folder of static files to server
+# relative to this file
+public_folder: ./
+# Whether to server hidden folders
+# and files
+serve_hidden: false
+
+# SSL
+ssl:
+  # Location of your SSL key
+  # relative to this file
+  key: ./spec/keys/openssl.key
+  ## Location of your SSL crt
+  ## relative to this file
+  cert: ./spec/keys/openssl.crt
+
+# Theming
+theme:
+  # Either one of the preincluded
+  # themes (see `-h`) for the
+  # error page
+  # or path to a .mst/.mustache/.html
+  # file relative to this file
+  error: Default
+  # Either one of the preincluded
+  # themes (see `-h`) for the
+  # dir listing page
+  # or path to a .mst/.mustache/.html
+  # file relative to this file
+  dir: Default
+  # One of the preincluded logging
+  # formats (see `-h`)
+  logging: Default
+
+# Logging
+# Whether to enable logging of
+# requests
+logging: true
+# Whether to enable emojis in logs
+emoji: true
+# Whether to enable colors in logs
+# (already disabled in non-tty)
+colors: true
+
+# Options
+# Whether to set the 'Server'
+# header to the name and version
+# of the server
+server_header: true
+# Whether to enable gzip
+gzip: true
+# Directory options
+dir:
+  # Whether to serve index.html of
+  # folders if available
+  # e.g. GET /some_dir/ =>
+  # serve /some_dir/index.html
+  index: true
+  # Whether to enable directory
+  # listing
+  listing: true
+# Whether to enable custom HTML
+# error pages
+# If disable, server will respond
+# with text/plain
+# #{status_code}: #{message}
+custom_error_page: true

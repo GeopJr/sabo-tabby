@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Directory listing for <%= HTML.escape request_path %>">
+    <link rel="icon" href="data:image/svg+xml,<%= logo %>" type="image/svg+xml" />
+    <title>Directory listing for <%= HTML.escape request_path %></title>
+    <style>
+        <% css.each do |style| %>
+            <%= style -%>
+        <% end %>
+        html,body{background:var(--bg);background-attachment: fixed;font-family:monospace;color:var(--color-text);}body{margin:1rem;}a{text-decoration:none;font-weight:bold;}hr{color:var(--theme);}a,a:visited{color:var(--color-text);}.dir{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.7rem;}.item{overflow-wrap:anywhere;gap:.5rem;grid-template-columns:1fr 100%;display:grid;padding:2rem 2rem;border-style:solid;border-width:var(--item-border-width);border-color:var(--color-border);border-radius:var(--item-border-radius);font-size:larger;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms;}.item:hover{color:var(--theme);border-color:var(--theme);}
+    </style>
+</head>
+
+<body>
+    <h1>Directory listing for <%= HTML.escape request_path %>
+    </h1>
+    <hr />
+    <div class="dir">
+        <% encoded_request_path=URI.encode_path(request_path) %>
+        <% each_entry do |entry, file| %>
+            <a class="item" href="<%= encoded_request_path %><%= URI.encode_path entry %>">
+                <span><%= file ? "📄" : "📁" %></span><%= HTML.escape entry %><%= file ? "" : "/" %>
+            </a>
+        <% end %>
+    </div>
+</body>
+</html>

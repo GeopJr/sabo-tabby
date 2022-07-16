@@ -1,0 +1,6 @@
+version: 2.0
+shards:
+  crustache:
+    git: https://github.com/makenowjust/crustache.git
+    version: 2.4.4
+

@@ -1,0 +1,1 @@
+:root{--bg:#222;--color-text:white;--color-border:rgba(255,255,255,.3);--theme:#f0db78;--item-border-width:.3rem;--item-border-radius:.7rem;}@media (prefers-color-scheme:light){:root{--bg:#fff;--color-text:black;--color-border:rgba(0,0,0,.3);--theme:#a56262}}h1{text-align:center;}

@@ -1,0 +1,1 @@
+:root{--bg:#2b579a;--color-text:white;--color-border:white;--theme:white;--item-border-width:.1rem;--item-border-radius:0;}@media (prefers-color-scheme:light){:root{--bg:#0078d4}}h1{text-align:left;}a,a:visited{color:black!important;}.item{background-color:white;color:black;}.item:hover{color:black!important;box-shadow:0 6px 14px 0 rgba(0,0,0,.53),0 1px 3px 0 rgba(0,0,0,.50);}
