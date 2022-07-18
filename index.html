@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabo Tabby</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ff44ff">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ff44ff">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#FF4FF">
+  <meta name="description"
+    content="An extremely fast static file server. It offers a wide variety of customization options - from error pages to logging format packed into a single statically-linked binary.">
+  <link rel="canonical" href="https://sabo-tabby.queer.software">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sabo Tabby" />
+  <meta name="twitter:description"
+    content="An extremely fast static file server. It offers a wide variety of customization options - from error pages to logging format packed into a single statically-linked binary." />
+  <meta name="twitter:creator" content="@GeopJr1312" />
+  <meta name="twitter:image" content="https://i.imgur.com/aJhErh3.png" />
+  <meta property="og:title" content="Sabo Tabby" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sabo-tabby.queer.software" />
+  <meta property="og:image" content="https://i.imgur.com/aJhErh3.png" />
+  <meta property="og:description"
+    content="An extremely fast static file server. It offers a wide variety of customization options - from error pages to logging format packed into a single statically-linked binary." />
+  <script>
+    const colors = ["#FF44FF", "#FF0000", "#00DD00", "#8C0094"]
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    document.documentElement.style.setProperty('--theme', color)
+  </script>
+</head>
+
+<body>
+  <a href="#main" tabindex="0" class="skip-to-content-link">Skip to main content</a>
+  <header>
+    <div aria-hidden="true" class="corner"></div>
+    <div class="flex-container">
+      <h1>BEWARE</h1>
+      <img
+        alt="logo, sabo tabby (https://archive.iww.org/history/icons/black_cat/) but the background is a trans pride flag"
+        src="/assets/logo.svg" />
+      <h1>Sabo Tabby</h1>
+    </div>
+  </header>
+  <main id="main">
+    <div class="section-1">
+      <div class="text">
+        <h1>What is this?</h1>
+        <p>An extremely fast <b>static file server</b>.
+          It offers a wide variety of customization options - from
+          error pages to logging format packed into a single
+          statically-linked binary.
+        </p>
+
+        <p>All options can be set either from the CLI or from a
+          <code>sabo.tabby.yaml</code> config file. Personally, I use
+          it to mirror sites and content to TOR and other networks. All
+          it takes is <code>sabo-tabby -f ./my_folder --port $PORT</code>.
+        </p>
+      </div>
+      <div class="chart">
+        <h1>Benchmarks</h1>
+        <canvas id="myChart" width="400" height="400">
+          1. sabo-tabby: 69247 requests/sec
+          2. warp: 68707 requests/sec
+          3. nginx: 49369 requests/sec
+          4. httpd: 28352 requests/sec
+          5. jester: 18059 requests/sec
+          6. polka: 9323 requests/sec
+          7. jaguar: 4765 requests/sec
+          8. express: 3897 requests/sec
+          9. sinatra: 2514 requests/sec
+        </canvas>
+      </div>
+    </div>
+    <div class="section-2">
+      <div aria-hidden="true" class="corner"></div>
+      <img aria-hidden="true" src="/assets/cats.png" class="cats" />
+      <div class="downloads">
+        <h1>Downloads</h1>
+        <div class="buttons">
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/GeopJr/sabo-tabby/releases/latest">
+            <i id="download"></i>
+            <b>Download</b>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/GeopJr/sabo-tabby/">
+            <i id="github"></i>
+            <b>Source</b>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <img
+        alt="logo, sabo tabby (https://archive.iww.org/history/icons/black_cat/) but the background is a trans pride flag"
+        src="/assets/logo.svg" />
+      <div class="text">
+        <p>Powered by <i title="Crystal Language Logo" class="icon" id="crystal"></i></p>
+        <p>Refresh the page for another randomly selected theme.</p>
+      </div>
+      <div class="buttons">
+        <a target="_blank" rel="noopener noreferrer" title="Sponsor me on GitHub Sponsors"
+          href="https://github.com/sponsors/GeopJr" id="ghsponsors"></a>
+        <a target="_blank" rel="noopener noreferrer" title="Follow me on Mastodon" href="https://tech.lgbt/@GeopJr"
+          id="mastodon"></a>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

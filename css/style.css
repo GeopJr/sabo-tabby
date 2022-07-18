@@ -1,0 +1,301 @@
+:root {
+    --theme: "#FF0000"
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background: black;
+    font-family: "Spinnaker", sans-serif;
+}
+
+.skip-to-content-link {
+    background: var(--theme);
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom-right-radius: 1rem;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    transform: translateY(-100%);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+    z-index: 100;
+}
+
+.skip-to-content-link:focus {
+    transform: translateY(0%);
+}
+
+header {
+    font-family: "Pirata One", cursive;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: var(--theme);
+
+    >.corner {
+        width: 0;
+        height: 0;
+        border-bottom: 100vh solid black;
+        border-left: 100vw solid transparent;
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        right: 0;
+    }
+
+    >.flex-container {
+        z-index: 50;
+        margin: auto;
+        text-align: center;
+
+        >img {
+            width: min(50vw, 50vh);
+        }
+
+        >h1 {
+            font-size: clamp(1.8rem, 20vw, 5rem);
+            text-align: center;
+            text-shadow: -1px -1px 0 var(--theme), 1px -1px 0 var(--theme), -1px 1px 0 var(--theme), 1px 1px 0 var(--theme);
+        }
+    }
+
+}
+
+main {
+    color: white;
+
+    >* {
+        padding: 8rem 0rem;
+    }
+
+    h1 {
+        font-family: "Medula One", cursive;
+        font-size: clamp(1.8rem, 20vw, 5rem);
+    }
+
+    .section-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        >* {
+            flex: 0 50%;
+            padding: 1rem 0rem;
+
+            >h1 {
+                margin-bottom: 5rem;
+            }
+
+            >p {
+                padding: 2rem;
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                max-width: 600px;
+                width: 100vw;
+
+                >code {
+                    font-family: monospace;
+                    background-color: white;
+                    color: black;
+                    border-radius: 15px;
+                    padding: 0rem .5rem;
+                    box-decoration-break: clone;
+                }
+            }
+
+            >h1,
+            p {
+                text-align: center;
+            }
+
+            >canvas {
+                max-width: min(512px, 100vw);
+                max-height: min(512px, 100vw);
+            }
+        }
+
+        >.chart,
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .section-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: var(--theme);
+        position: relative;
+
+        >.corner {
+            width: 0;
+            height: 0;
+            border-top: 20vh solid black;
+            border-left: 100vw solid transparent;
+            position: absolute;
+            z-index: 0;
+            margin-top: -8rem;
+            filter: drop-shadow(0 0 1rem black);
+        }
+
+        >img {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        >*:not(.corner):not(img) {
+            z-index: 10;
+            padding: 1rem 0rem;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            >h1 {
+                margin-bottom: 5rem;
+                text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+                text-align: center;
+            }
+
+            >.buttons {
+                width: 50vw;
+                border-radius: 1rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                >a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: black;
+                    width: 100%;
+                    height: 100%;
+                    padding: 3rem 1rem;
+                    transition-duration: 300ms;
+                    text-decoration: none;
+
+                    &:hover,
+                    &:focus {
+                        background-color: white;
+                        color: black;
+
+                    }
+
+                    &:first-child {
+                        border-top-left-radius: 1rem;
+                        border-bottom-left-radius: 1rem;
+                        padding-left: 3rem;
+                        justify-content: left;
+
+                    }
+
+                    &:last-child {
+                        border-top-right-radius: 1rem;
+                        border-bottom-right-radius: 1rem;
+                        padding-right: 3rem;
+                        justify-content: right;
+
+                    }
+
+
+                    >i {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--theme);
+
+    >div {
+        box-shadow: 0px 0px 4rem black;
+        display: flex;
+        flex-direction: row;
+        background-color: white !important;
+        background: url(/assets/antifascist.svg) top -50px left 0 repeat, url(/assets/antifascist.svg) top 50px left 100px repeat;
+        color: black;
+        align-items: center;
+        justify-content: space-between;
+        width: 95vw;
+        z-index: 10;
+
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        padding: 1rem;
+
+        >img {
+            max-width: 100px;
+        }
+
+        >.text {
+            text-align: center;
+        }
+
+        >.buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100px;
+            flex-wrap: wrap;
+            height: 100px;
+
+            >a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 36px;
+                padding: .5rem;
+                background-color: rgba(0, 0, 0, 1);
+                color: white;
+                border-radius: .6rem;
+                transition-duration: .2s;
+
+                &:hover,
+                &:focus {
+                    &#ghsponsors {
+                        background-color: rgba(234, 74, 170, .3);
+                        color: black;
+                    }
+
+                    &#mastodon {
+                        background-color: rgba(48, 136, 212, .3);
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.icon {
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
