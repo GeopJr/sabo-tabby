@@ -31,6 +31,25 @@ body {
     transform: translateY(0%);
 }
 
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
 header {
     font-family: "Pirata One", cursive;
     display: flex;
@@ -38,6 +57,22 @@ header {
     width: 100vw;
     height: 100vh;
     background: var(--theme);
+
+    >#arrow-down {
+        animation: bounce 2s infinite;
+        color: white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        z-index: 50;
+        position: absolute;
+        font-size: xxx-large;
+        left: calc(50% - 40px);
+        bottom: 0;
+        color: var(--theme)
+    }
 
     >.corner {
         width: 0;
