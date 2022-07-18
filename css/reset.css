@@ -23,3 +23,8 @@ dl,
 dd {
     margin: 0;
 }
+
+button {
+    border: 0;
+    padding: 0;
+}

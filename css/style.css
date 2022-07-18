@@ -286,15 +286,23 @@ footer {
 
         >.text {
             text-align: center;
+
+            >#themes>.theme-btn {
+                height: 24px;
+                width: 24px;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
         }
 
         >.buttons {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            width: 100px;
             flex-wrap: wrap;
             height: 100px;
+            flex: 0 1 15%;
+            max-width: 90px;
 
             >a {
                 display: flex;

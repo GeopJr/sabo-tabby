@@ -31,10 +31,15 @@
   <meta property="og:description"
     content="An extremely fast static file server. It offers a wide variety of customization options - from error pages to logging format packed into a single statically-linked binary." />
   <script>
-    const colors = ["#FF44FF", "#FF0000", "#00DD00", "#8C0094"]
-    const color = colors[Math.floor(Math.random() * colors.length)];
+    console.log('%cftp://1.3.1.2', 'font-weight: bold; font-size: 50px;');
 
-    document.documentElement.style.setProperty('--theme', color)
+    function setThemeColor(theme) {
+      document.documentElement.style.setProperty('--theme', theme)
+    }
+
+    const colors = ["#FF0000", "#FF44FF", "#00DD00", "#8C0094"]
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    setThemeColor(color)
   </script>
 </head>
 
@@ -107,7 +112,9 @@
         src="/assets/logo.svg" />
       <div class="text">
         <p>Powered by <i title="Crystal Language Logo" class="icon" id="crystal"></i></p>
-        <p>Refresh the page for another randomly selected theme.</p>
+        <p>Pick a theme:</p>
+        <div id="themes"></div>
+        <p><a href="/">or refresh the page.</a></p>
       </div>
       <div class="buttons">
         <a target="_blank" rel="noopener noreferrer" title="Sponsor me on GitHub Sponsors"
@@ -117,6 +124,13 @@
       </div>
     </div>
   </footer>
+  <script>
+    const btns = []
+    for (let i = 0; i < colors.length; i++) {
+      btns.push(`<button onclick="setThemeColor('${colors[i]}')" title="Change theme color to ${colors[i]}" class="theme-btn" style="background-color:${colors[i]}"></button>`)
+    }
+    document.getElementById('themes').innerHTML = btns.join("\n")
+  </script>
   <script type="module" src="/main.js"></script>
 </body>
 
