@@ -117,5 +117,9 @@ module Sabo::Tabby
         call_next(context)
       end
     end
+
+    private def modification_time(file_path)
+      File.info(file_path).modification_time
+    end
   end
 end
