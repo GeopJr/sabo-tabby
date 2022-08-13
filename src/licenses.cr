@@ -31,12 +31,20 @@ licenses = [] of String
 root = Path[__DIR__, ".."]
 lib_folder = root / "lib"
 
-LICENSE_FILES.each do |license_file|
-  license_path = root / license_file
-  if File.exists?(license_path)
-    licenses << File.read(license_path)
-    break
+def get_license_content(parent : Path) : String?
+  license = nil
+  LICENSE_FILES.each do |license_file|
+    license_path = parent / license_file
+    if File.exists?(license_path)
+      license = File.read(license_path)
+      break
+    end
   end
+  license
+end
+
+unless (license = get_license_content(root)).nil?
+  licenses << license
 end
 
 licenses << OLD_LICENSE
@@ -45,16 +53,9 @@ Dir.each_child(lib_folder) do |shard|
   path = lib_folder / shard
   next if File.file?(path)
 
-  license = nil
-  LICENSE_FILES.each do |file|
-    license_path = path / file
-    if File.exists?(license_path)
-      license = license_path
-      break
-    end
+  unless (license = get_license_content(path)).nil?
+    licenses << "#{shard.capitalize.colorize.mode(:underline).mode(:bold)}\n#{license}"
   end
-
-  licenses << "#{shard.capitalize.colorize.mode(:underline).mode(:bold)}\n#{File.read(license)}" unless license.nil?
 end
 
 licenses.unshift("#{APP_NAME.capitalize.colorize.mode(:underline).mode(:bold)}")
