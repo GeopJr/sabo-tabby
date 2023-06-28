@@ -39,7 +39,8 @@ module Sabo::Tabby
       if File.exists?(static_error_page)
         self.content_type = "text/html; charset=UTF-8"
         IO.copy File.open(static_error_page), self
-      # If HTML pages are enabled, call `error_page` else return a basic text/plain one.
+
+        # If HTML pages are enabled, call `error_page` else return a basic text/plain one.
       elsif Sabo::Tabby.config.error_page
         self.content_type = "text/html; charset=UTF-8"
         self << error_page(@status.code, @status_message.to_s) << '\n'
