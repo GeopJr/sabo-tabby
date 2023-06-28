@@ -95,6 +95,28 @@ describe Sabo::Tabby::StaticFileHandler do
     response.headers["Content-Encoding"]?.should be_nil
   end
 
+  it "should serve custom static error pages" do
+    page_content = "🫖"
+
+    # Create custom static error page
+    current_public_folder = Sabo::Tabby.config.public_folder
+    folder = Path[Dir.tempdir, Random::Secure.hex(5)]
+    Dir.mkdir(folder)
+    Sabo::Tabby.config.public_folder = folder.to_s
+
+    custom_page_path = Path[folder, "404.html"]
+    File.write(custom_page_path, page_content)
+
+    response = handle_request HTTP::Request.new("GET", "/I_DO_NOT_EXIST")
+    response.status_code.should eq(404)
+    response.body.should eq(page_content)
+
+    # Cleanup
+    Sabo::Tabby.config.public_folder = current_public_folder
+    File.delete(custom_page_path)
+    Dir.delete(folder)
+  end
+
   it "should not serve a not found file" do
     response = handle_request HTTP::Request.new("GET", "/not_found_file.txt")
     response.status_code.should eq(404)
