@@ -34,8 +34,12 @@ module Sabo::Tabby
       @status_message = message ||= @status.description
       self.headers.add "Server", Sabo::Tabby::SERVER_HEADER if Sabo::Tabby.config.server_header
 
+      # If there's a file with error_code.html, (eg 404.html) in the public dir, use that.
+      if File.exists?("#{Sabo::Tabby.config.public_folder}/#{status_code}.html")
+        self.content_type = "text/html; charset=UTF-8"
+        self << File.read("#{Sabo::Tabby.config.public_folder}/#{status_code}.html")
       # If HTML pages are enabled, call `error_page` else return a basic text/plain one.
-      if Sabo::Tabby.config.error_page
+      elsif Sabo::Tabby.config.error_page
         self.content_type = "text/html; charset=UTF-8"
         self << error_page(@status.code, @status_message.to_s) << '\n'
       else

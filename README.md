@@ -61,7 +61,7 @@ They are built & published by our lovely [actions](https://github.com/GeopJr/sab
 ## Usage
 
 ```
-sabo-tabby v1.0.0
+sabo-tabby v1.1.0
 
 Usage: sabo-tabby [arguments]
 
