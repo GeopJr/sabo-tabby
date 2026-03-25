@@ -1,4 +1,4 @@
-import IconGithub from '~icons/simple-icons/github'
+import IconGithub from '~icons/simple-icons/codeberg'
 import IconGithubSponsors from '~icons/simple-icons/githubsponsors'
 import IconCrystal from '~icons/simple-icons/crystal'
 import IconMastodon from '~icons/simple-icons/mastodon'
