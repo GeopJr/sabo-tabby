@@ -5,13 +5,9 @@
 <h4 align="center">Extremely Fast Static File Server</h4>
 <p align="center">
   <br />
-    <a href="https://github.com/GeopJr/sabo-tabby/blob/main/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.1-000000.svg?style=for-the-badge&labelColor=ff0000" alt="Code Of Conduct" /></a>
-    <a href="https://github.com/GeopJr/sabo-tabby/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-BSD--2--Clause-000000.svg?style=for-the-badge&labelColor=ff0000" alt="BSD-2-Clause" /></a>
-    <a href="https://github.com/GeopJr/sabo-tabby/actions"><img src="https://img.shields.io/github/workflow/status/GeopJr/sabo-tabby/Specs%20&%20Lint/main?labelColor=ff0000&style=for-the-badge" alt="ci action status" /></a>
+    <a href="./CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.1-000000.svg?style=for-the-badge&labelColor=ff0000" alt="Code Of Conduct" /></a>
+    <a href="./LICENSE"><img src="https://img.shields.io/badge/LICENSE-BSD--2--Clause-000000.svg?style=for-the-badge&labelColor=ff0000" alt="BSD-2-Clause" /></a>
 </p>
-
-
-#
 
 ## What is sabo-tabby?
 
@@ -23,23 +19,17 @@ This is what sabo-tabby is - an extremely fast & customizable static file server
 
 sabo-tabby is a fork of [Kemal](https://github.com/kemalcr/kemal) but with all the framework parts stripped away.
 
-#
-
 ## Benchmarks
 
-![Benchmarks, read https://github.com/GeopJr/sabo-tabby/blob/benchmarks/README.md for full benchmark results](https://raw.githubusercontent.com/GeopJr/sabo-tabby/benchmarks/benchmarks.svg)
+![Benchmarks, read https://codeberg.org/GeopJr/sabo-tabby/src/branch/benchmarks/README.md for full benchmark results](https://codeberg.org/GeopJr/sabo-tabby/media/branch/benchmarks/benchmarks.svg)
 
 > Benchmarks were done using the `wrk` tool. Please don't take them too seriously, their only use is to show that it is indeed very fast. The frameworks it competes against offer a wide variety of functions and features. All benchmarks are in the `benchmarks` branch.
-
-#
 
 ## Installation
 
 ### Pre-built
 
-You can download one of the statically-linked pre-built binaries from the [releases page](https://github.com/GeopJr/sabo-tabby/releases/latest).
-
-They are built & published by our lovely [actions](https://github.com/GeopJr/sabo-tabby/actions/workflows/release.yml).
+You can download one of the statically-linked pre-built binaries from the [releases page](https://codeberg.org/GeopJr/sabo-tabby/releases/latest).
 
 ### Building
 
@@ -55,8 +45,6 @@ They are built & published by our lovely [actions](https://github.com/GeopJr/sab
 #### Manually
 
 `$ shards build --production --no-debug --release -Dpreview_mt`
-
-#
 
 ## Usage
 
@@ -106,8 +94,6 @@ Arguments:
     --no-error-page                  Disable custom error page
 ```
 
-#
-
 ## Config
 
 You can load your config from a file.
@@ -117,8 +103,6 @@ If no arguments are provided when running sabo-tabby, it will automatically try 
 If the config file is in a different path or with a different name, you can point at it with the `-c` option.
 
 Read [./sabo.tabby.yaml](./sabo.tabby.yaml) for an example config.
-
-#
 
 ## Themes
 
@@ -136,7 +120,7 @@ Read [./sabo.tabby.yaml](./sabo.tabby.yaml) for an example config.
 | `TQILA` | ![404 page, pastel pink background, center column, at the top the status code 404 is shown in black color, below it the message 'not found' in black color and below it a button with the label 'Go home' underlined in black color, at the bottom right corner a silhouette of a black cat directly looking at the user](https://i.imgur.com/oHqGItc.jpg) |
 </details>
 
-#
+---
 
 <details>
   <summary>Directory Listing</summary>
@@ -152,8 +136,6 @@ Read [./sabo.tabby.yaml](./sabo.tabby.yaml) for an example config.
 | `Material` (light) | ![directory listing page, light green background, at the top theres a centered header with the label 'Directory listing for /' in black color, underneath it theres a horizontal line in darker green color, below it theres a grid of 3 columns of cards, cards have a darker green background, are pill shaped and have a shadow underneath them giving them a floating effect, inside each card theres a label in white color with the name of the file or folder it represents, all files are named in the format of cake_recipe_{1-12} and folders are named in the format of stuff{1-7}, next to the folder label theres a folder emoji and next to the file one a file emoji, when a card gets hovered, the shadow gets removed, the label changes color to black, the background changes color to the same as the page background and it gets a border with a darker green color](https://i.imgur.com/OcCsXY7.jpg) |
 | `Material` (dark) | ![directory listing page, dark green background, at the top theres a centered header with the label 'Directory listing for /' in white color, underneath it theres a horizontal line in lighter green color, below it theres a grid of 3 columns of cards, cards have a lighter green background, are pill shaped and have a shadow underneath them giving them a floating effect, inside each card theres a label in white color with the name of the file or folder it represents, all files are named in the format of cake_recipe_{1-12} and folders are named in the format of stuff{1-7}, next to the folder label theres a folder emoji and next to the file one a file emoji, when a card gets hovered, the shadow gets removed, the background changes color to the same as the page background and it gets a border with a lighter green color](https://i.imgur.com/BT5aNES.jpg) |
 </details>
-
-#
 
 ### Loading custom themes using Crustache
 
@@ -212,8 +194,6 @@ Items:
 {{/entries}}
 ```
 
-#
-
 ## Logging styles
 
 - Default
@@ -245,7 +225,6 @@ Items:
 ```
 127.0.0.1 - - [16/Jul/2022:19:37:43 +0300] "GET / HTTP/1.1" 200 0 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0"
 ```
-#
 
 ## Development
 
@@ -271,13 +250,11 @@ Items:
 ## Contributing
 
 1. Read the [Code of Conduct](./CODE_OF_CONDUCT.md)
-2. Fork it (<https://github.com/your-github-user/sabo-tabby/fork>)
+2. Fork it (<https://codeberg.org/GeopJr/sabo-tabby/fork>)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new Pull Request
-
-#
 
 ## Sponsors
 
